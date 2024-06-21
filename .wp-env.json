@@ -1,0 +1,10 @@
+{
+  "plugins": [
+    "./bernie-block",
+    "https://downloads.wordpress.org/plugin/wordpress-beta-tester.latest-stable.zip"
+  ],
+  "themes": [],
+  "config": {
+    "WP_DEBUG": true
+  }
+}

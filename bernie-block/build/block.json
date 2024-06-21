@@ -4,8 +4,7 @@
   "name": "create-block/bernie-block",
   "version": "0.1.0",
   "title": "Bernie Block",
-  "category": "widgets",
-  "icon": "smiley",
+  "category": "text",
   "description": "Example block scaffolded with Create Block tool.",
   "example": {},
   "supports": {
