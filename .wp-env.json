@@ -2,6 +2,7 @@
   "plugins": [
     "./bernie-block",
     "./copyright-date-block",
+    "./bm-art-install-listings",
     "https://downloads.wordpress.org/plugin/wordpress-beta-tester.latest-stable.zip"
   ],
   "themes": [],

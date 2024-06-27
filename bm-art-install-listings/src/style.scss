@@ -1,0 +1,36 @@
+/**
+ * The following styles get applied both on the front of your site
+ * and in the editor.
+ *
+ * Replace them with your own styles or remove the file completely.
+ */
+
+.wp-block-create-block-bm-art-install-listings {
+	background-color: #21759b;
+	color: #fff;
+	padding: 2px;
+}
+
+.listing-card {
+    border: 1px solid #ddd;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+.card-header {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.card-footer {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.filter-toggle {
+    margin-bottom: 20px;
+    button {
+        margin-right: 10px;
+    }
+}

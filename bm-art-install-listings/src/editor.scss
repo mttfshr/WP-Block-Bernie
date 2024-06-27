@@ -1,0 +1,36 @@
+/**
+ * The following styles get applied inside the editor only.
+ *
+ * Replace them with your own styles or remove the file completely.
+ */
+
+.wp-block-create-block-bm-art-install-listings {
+}
+
+.bm-art-listings-card-footer {
+    flex-wrap: wrap;
+}
+
+.listing-card {
+    border: 1px solid #ddd;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+.card-header {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.card-footer {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.filter-toggle {
+    margin-bottom: 20px;
+    button {
+        margin-right: 10px;
+    }
+}

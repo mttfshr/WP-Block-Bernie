@@ -1,0 +1,19 @@
+{
+  "apiVersion": 3,
+  "name": "bm-bernie/bm-art-install-listings",
+  "version": "0.1.0",
+  "title": "BM Art Install Listings",
+  "category": "widgets",
+  "icon": "art",
+  "description": "Tutorial project for rendering items from the API",
+  "example": {},
+  "supports": {
+    "html": false
+  },
+  "textdomain": "bm-art-install-listings",
+  "editorScript": "file:./index.js",
+  "viewScript": "file:./view.js",
+  "style": "file:./style.css",
+  "editorStyle": "file:./editor.css",
+  "renderCallback": "bm_art_install_listings_render_callback"
+}
