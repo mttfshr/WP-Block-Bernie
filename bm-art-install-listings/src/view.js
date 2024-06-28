@@ -19,7 +19,7 @@ const MAX_CACHE_TIME = 24 * 60 * 60 * 1000; // 1 day in milliseconds
 
 const View = ( { apiUrl, authToken } ) => {
     const [ listings, setListings ] = useState([]);
-    const [ filter, setFilter ] = useState('All');
+    const [ programFilter, setProgramFilter ] = useState('All');
     const [ searchTerm, setSearchTerm ] = useState('');
 
     useEffect( () => {
@@ -51,6 +51,15 @@ const View = ( { apiUrl, authToken } ) => {
                     localStorage.setItem(CACHE_TIME_KEY, now.toString());
                     setListings(sortedData);
                 }
+
+                // Parse query parameters
+                const params = new URLSearchParams(window.location.search);
+                const nameParam = params.get('name') || '';
+                const programFilterParam = params.get('program') || 'All';
+
+                // Set initial state based on query parameters
+                setSearchTerm(nameParam);
+                setProgramFilter(programFilterParam);
             } catch (error) {
                 console.error('Error fetching API data:', error);
             }
@@ -60,33 +69,33 @@ const View = ( { apiUrl, authToken } ) => {
     }, [ apiUrl, authToken ]);
 
     const filteredListings = listings
-        .filter(listing => filter === 'All' || listing.program === filter)
+        .filter(listing => programFilter === 'All' || listing.program.toString().toLowerCase() === programFilter.toString().toLowerCase())
         .filter(listing => listing.name.toString().toLowerCase().includes(searchTerm.toLowerCase()));
 
     return (
         <div>
             <TextControl
-                label={ __('Search', 'bm-art-install-listings') }
+                label={ __('Search by artwork name', 'bm-art-install-listings') }
                 value={ searchTerm }
                 onChange={ value => setSearchTerm(value) }
                 placeholder={ __('Type to search...', 'bm-art-install-listings') }
             />
             <div className="filter-toggle">
                 <Button
-                    variant={ filter === 'All' ? 'primary' : 'secondary' }
-                    onClick={ () => setFilter('All') }
+                    variant={ programFilter === 'All' ? 'primary' : 'secondary' }
+                    onClick={ () => setProgramFilter('All') }
                 >
                     { __( 'All', 'bm-art-install-listings' ) }
                 </Button>
                 <Button
-                    variant={ filter === 'Honorarium' ? 'primary' : 'secondary' }
-                    onClick={ () => setFilter('Honorarium') }
+                    variant={ programFilter === 'Honorarium' ? 'primary' : 'secondary' }
+                    onClick={ () => setProgramFilter('Honorarium') }
                 >
                     { __( 'Honorarium', 'bm-art-install-listings' ) }
                 </Button>
                 <Button
-                    variant={ filter === 'Self-Funded' ? 'primary' : 'secondary' }
-                    onClick={ () => setFilter('Self-Funded') }
+                    variant={ programFilter === 'Self-Funded' ? 'primary' : 'secondary' }
+                    onClick={ () => setProgramFilter('Self-Funded') }
                 >
                     { __( 'Self-Funded', 'bm-art-install-listings' ) }
                 </Button>
