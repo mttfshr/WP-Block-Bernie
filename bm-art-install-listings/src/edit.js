@@ -33,7 +33,7 @@ export default function Edit( { apiUrl, authToken } ) {
                 if (cachedData && cachedTime && (now - cachedTime) < MAX_CACHE_TIME) {
                     setListings(JSON.parse(cachedData));
                 } else {
-                    const response = await fetch('http://localhost:3001/api/art-installs');
+                    const response = await fetch('http://localhost:3000/api/art-installs');
                     if (!response.ok) {
                         throw new Error('Network response was not ok');
                     }

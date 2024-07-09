@@ -8,6 +8,8 @@
 
 defined('ABSPATH') || exit;
 
+require_once plugin_dir_path( __FILE__ ) . 'render.php';
+
 function bm_art_install_listings_register_settings() {
     register_setting('bm_settings_group', 'bm_api_url');
     register_setting('bm_settings_group', 'bm_auth_token');
@@ -47,8 +49,6 @@ function bm_art_install_listings_options_page() {
     </div>
     <?php
 }
-
-require plugin_dir_path( __FILE__ ) . 'render.php';
 
 function bm_art_install_listings_enqueue_block_assets() {
     $style_path = plugin_dir_path( __FILE__ ) . 'build/style.css';
