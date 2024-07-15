@@ -1,3 +1,4 @@
+import 'preact/debug';
 import { registerBlockType } from '@wordpress/blocks';
 import './style.scss';
 import './editor.scss';
@@ -6,6 +7,6 @@ import save from './save';
 import metadata from './block.json';
 
 registerBlockType(metadata.name, {
-    edit: Edit,
-    save,
+    edit: Edit, // For the edit option we use the Edit component
+    save, // For the save option we use the save function. This is a shorthand for save: save
 });

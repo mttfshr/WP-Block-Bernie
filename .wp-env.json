@@ -3,6 +3,7 @@
     "./bernie-block",
     "./copyright-date-block",
     "./bm-art-install-listings",
+    "./donation-calculator",
     "https://downloads.wordpress.org/plugin/wordpress-beta-tester.latest-stable.zip"
   ],
   "themes": [],

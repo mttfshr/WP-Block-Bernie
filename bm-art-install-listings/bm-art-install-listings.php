@@ -8,8 +8,6 @@
 
 defined('ABSPATH') || exit;
 
-require_once plugin_dir_path( __FILE__ ) . 'render.php';
-
 function bm_art_install_listings_register_settings() {
     register_setting('bm_settings_group', 'bm_api_url');
     register_setting('bm_settings_group', 'bm_auth_token');
@@ -108,9 +106,7 @@ add_action('enqueue_block_assets', 'bm_art_install_listings_enqueue_block_assets
 
 // Register the block type using the metadata loaded from the `block.json` file.
 function create_block_bm_art_install_listings_block_init() {
-    register_block_type(__DIR__ . '/build', array(
-        'render_callback' => 'bm_art_install_listings_render_callback',
-    ));
+	register_block_type_from_metadata( __DIR__ . '/build' );
 }
 add_action('init', 'create_block_bm_art_install_listings_block_init');
 ?>

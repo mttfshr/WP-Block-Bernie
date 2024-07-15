@@ -1,4 +1,5 @@
 {
+    "$schema": "https://schemas.wp.org/trunk/block.json",
     "apiVersion": 3,
     "name": "bm-bernie/bm-art-install-listings",
     "version": "0.1.0",
@@ -8,12 +9,12 @@
     "description": "Tutorial project for rendering items from the API",
     "example": {},
     "supports": {
-        "html": false
+        "interactivity": true
     },
     "textdomain": "bm-art-install-listings",
     "editorScript": "file:./index.js",
-    "viewScript": "file:./view.js",
-    "style": "file:./style.css",
     "editorStyle": "file:./editor.css",
-	"renderCallback": "bm_art_install_listings_render_callback"
+    "style": "file:./style-index.css",
+    "render": "file:./render.php",
+	"viewScriptModule": "file:./view.js"
 }
